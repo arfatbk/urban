@@ -8,7 +8,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',  // Enable static exports
-  basePath: '/urban', // Repository name
+  basePath: process.env.PAGES_BASE_PATH, // Repository name
   images: {
     unoptimized: true, // Required for static export
   },
