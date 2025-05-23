@@ -72,7 +72,13 @@ export async function generateStaticParams() {
   ]
 }
 
-export default function LoanTypePage({ params }: { params: { type: 'personal' | 'home' } }) {
+interface PageProps {
+  params: {
+    type: keyof typeof loanDetails;
+  };
+}
+
+export default function LoanTypePage({ params }: PageProps) {
   const loan = loanDetails[params.type]
 
   if (!loan) {
