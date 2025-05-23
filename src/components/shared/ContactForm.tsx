@@ -38,7 +38,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-md bg-green-50 p-4">
+      <div className="lg:my-48 rounded-md bg-green-50 p-4">
         <div className="flex">
           <div className="flex-shrink-0">
             <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">

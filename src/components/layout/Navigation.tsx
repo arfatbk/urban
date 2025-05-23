@@ -11,7 +11,7 @@ const navigation = [
   { name: 'About Us', href: '/about' },
   { name: 'Loans', href: '/loans' },
   { name: 'Deposits', href: '/deposits' },
-  { name: 'Branches', href: '/branches' },
+  // { name: 'Branches', href: '/branches' },
   { name: 'Contact', href: '/contact' },
 ]
 

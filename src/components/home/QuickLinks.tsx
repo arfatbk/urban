@@ -23,7 +23,7 @@ const features = [
     name: 'Savings Account',
     description: 'Start your savings journey with our feature-rich savings accounts.',
     icon: UserGroupIcon,
-    href: '/savings',
+    href: '/deposits',
   },
 ]
 

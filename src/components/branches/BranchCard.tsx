@@ -8,8 +8,6 @@ export interface Branch {
   address: string
   phone: string
   hours: string
-  latitude: number
-  longitude: number
 }
 
 interface BranchCardProps {
@@ -48,7 +46,7 @@ export default function BranchCard({ branch, onClick, isActive }: BranchCardProp
         </div>
         <div className="flex gap-x-3">
           <dt className="flex-none">
-            <span className="sr-only">Working hours</span>
+            <span className="sr-only">Hours</span>
             <ClockIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
           </dt>
           <dd className="text-sm leading-6 text-gray-600">{branch.hours}</dd>

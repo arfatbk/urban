@@ -12,7 +12,7 @@ export default function Stats() {
         <div className="mx-auto max-w-2xl lg:max-w-none">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Trusted by millions across the nation
+              Trusted by customers
             </h2>
             <p className="mt-4 text-lg leading-8 text-blue-200">
               Our numbers speak for themselves
