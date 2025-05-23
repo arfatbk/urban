@@ -1,5 +1,4 @@
 import { HomeIcon, BanknotesIcon } from '@heroicons/react/24/outline'
-import Image from 'next/image'
 
 const loanDetails = {
   personal: {
@@ -72,14 +71,15 @@ export async function generateStaticParams() {
   ]
 }
 
-interface PageProps {
-  params: {
-    type: keyof typeof loanDetails;
-  };
-}
+type LoanType = keyof typeof loanDetails;
 
-export default function LoanTypePage({ params }: PageProps) {
-  const loan = loanDetails[params.type]
+export default async function LoanTypePage({
+  params,
+}: {
+  params: Promise<{ type: LoanType }>;
+}) {
+  const { type } = await params
+  const loan = loanDetails[type]
 
   if (!loan) {
     return <div>Loan type not found</div>
