@@ -8,9 +8,63 @@ export default function EMICalculator() {
   const [loanTenure, setLoanTenure] = useState(12)
 
   const calculateEMI = () => {
+    // Validate loan amount
+    if (loanAmount <= 0) {
+      return {
+        emi: 0,
+        totalAmount: 0,
+        totalInterest: 0,
+        error: 'Loan amount must be greater than 0'
+      }
+    }
+    if (loanAmount > 10000000) {
+      return {
+        emi: 0,
+        totalAmount: 0,
+        totalInterest: 0,
+        error: 'Loan amount cannot exceed ₹1 Crore'
+      }
+    }
+
+    // Validate interest rate
+    if (interestRate <= 0) {
+      return {
+        emi: 0,
+        totalAmount: 0,
+        totalInterest: 0,
+        error: 'Interest rate must be greater than 0'
+      }
+    }
+    if (interestRate > 20) {
+      return {
+        emi: 0,
+        totalAmount: 0,
+        totalInterest: 0,
+        error: 'Interest rate cannot exceed 20%'
+      }
+    }
+
+    // Validate loan tenure
+    if (loanTenure < 1) {
+      return {
+        emi: 0,
+        totalAmount: 0,
+        totalInterest: 0,
+        error: 'Loan tenure must be at least 1 month'
+      }
+    }
+    if (loanTenure > 360) {
+      return {
+        emi: 0,
+        totalAmount: 0,
+        totalInterest: 0,
+        error: 'Loan tenure cannot exceed 360 months (30 years)'
+      }
+    }
+
     const principal = loanAmount
     const ratePerMonth = interestRate / (12 * 100)
-    const tenureInMonths = loanTenure 
+    const tenureInMonths = loanTenure
     
     const emi =
       (principal *
@@ -25,23 +79,20 @@ export default function EMICalculator() {
       emi: Math.round(emi),
       totalAmount: Math.round(totalAmount),
       totalInterest: Math.round(totalInterest),
+      error: ''
     }
   }
 
-  const setInterestRateNumber = (value: string) => {
-    const parsedValue = parseFloat(value);
-    if (!isNaN(parsedValue)) {
-      setInterestRate(parsedValue)
-    } else {
-      setInterestRate(1)
-    }
-  }
-
-  const { emi, totalAmount, totalInterest } = calculateEMI()
+  const { emi, totalAmount, totalInterest, error } = calculateEMI()
 
   return (
     <div className="rounded-lg bg-white p-6 shadow-sm ring-1 ring-gray-900/5">
       <h3 className="text-base font-semibold leading-7 text-gray-900">EMI Calculator</h3>
+      {error && (
+        <div className="mt-2 rounded-md bg-red-50 p-3">
+          <p className="text-sm text-red-600">{error}</p>
+        </div>
+      )}
       <div className="mt-6 space-y-6">
         <div>
           <label className="block text-sm font-medium leading-6 text-gray-900">
@@ -72,7 +123,7 @@ export default function EMICalculator() {
             % <input
             type="number"
             value={interestRate}
-            onChange={(e) => setInterestRateNumber(e.target.value)}
+            onChange={(e) => setInterestRate(Number(e.target.value))}
             className="mt-2 ml-2 inline w-auto rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
           />
           </label>
