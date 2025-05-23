@@ -17,52 +17,52 @@ interface DepositCardProps {
 
 export default function DepositCard({ deposit }: DepositCardProps) {
   return (
-    <div className="flex flex-col overflow-hidden rounded-lg border border-gray-200 hover:border-gray-300">
-      <div className="flex h-full flex-col p-6">
+    <div className="group relative flex flex-col overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-gray-200 transition-all duration-200 hover:shadow-xl hover:-translate-y-1">
+      <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-blue-50 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+      <div className="relative flex h-full flex-col p-8">
         <div>
-          <h3 className="text-xl font-semibold text-gray-900">{deposit.title}</h3>
+          <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">{deposit.title}</h3>
           <p className="mt-3 text-base text-gray-500">{deposit.description}</p>
         </div>
-        <div className="mt-6 flex items-center gap-x-3">
+        <div className="mt-8 flex items-center gap-x-3">
           <h4 className="flex-none text-sm font-semibold leading-6 text-blue-600">Interest Rate</h4>
           <div className="h-px flex-auto bg-gray-100" />
-          <p className="flex-none text-sm font-semibold text-gray-900">{deposit.interestRate}</p>
+          <p className="flex-none text-lg font-semibold text-blue-600">{deposit.interestRate}</p>
         </div>
-        <div className="mt-4 grid grid-cols-2 gap-4 text-sm">
-          <div>
-            <span className="font-medium text-gray-900">Min Amount:</span>{' '}
+        <div className="mt-6 grid grid-cols-2 gap-6 text-sm">
+          <div className="rounded-lg bg-gray-50 p-4">
+            <span className="block font-medium text-gray-900 mb-1">Min Amount</span>
             <span className="text-gray-600">{deposit.minAmount}</span>
           </div>
-          <div>
-            <span className="font-medium text-gray-900">Duration:</span>{' '}
+          <div className="rounded-lg bg-gray-50 p-4">
+            <span className="block font-medium text-gray-900 mb-1">Duration</span>
             <span className="text-gray-600">{deposit.duration}</span>
           </div>
         </div>
-        <div className="mt-6">
-          <h4 className="text-sm font-semibold text-gray-900">Features</h4>
+        <div className="mt-8 flex-grow">
+          <h4 className="text-sm font-semibold text-gray-900 flex items-center gap-x-2">
+            <div className="h-1 w-6 bg-blue-600 rounded"></div>
+            Features
+          </h4>
           <ul role="list" className="mt-4 space-y-3">
             {deposit.features.map((feature, index) => (
               <li key={index} className="flex gap-x-3 text-sm leading-6 text-gray-600">
-                <svg
-                  className="h-6 w-6 flex-none text-blue-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4.5 12.75l6 6 9-13.5"
-                  />
-                </svg>
+                <span className="flex-none font-semibold text-blue-600">→</span>
                 {feature}
               </li>
             ))}
           </ul>
         </div>
         
+        <div className="mt-8 pt-6 border-t border-gray-100">
+          <Link 
+            href="/contact" 
+            className="group/link flex items-center justify-between text-sm font-semibold text-blue-600"
+          >
+            Learn More 
+            <ArrowRightIcon className="h-4 w-4 transition-transform group-hover/link:translate-x-1" />
+          </Link>
+        </div>
       </div>
     </div>
   )

@@ -17,15 +17,14 @@ export default function EMICalculator() {
         error: 'Loan amount must be greater than 0'
       }
     }
-    if (loanAmount > 10000000) {
+    if (loanAmount > 1000000) {
       return {
         emi: 0,
         totalAmount: 0,
         totalInterest: 0,
-        error: 'Loan amount cannot exceed ₹1 Crore'
+        error: 'Loan amount cannot exceed ₹1000000'
       }
     }
-
     // Validate interest rate
     if (interestRate <= 4) {
       return {
@@ -43,7 +42,6 @@ export default function EMICalculator() {
         error: 'Interest rate cannot exceed 20%'
       }
     }
-
     // Validate loan tenure
     if (loanTenure < 1) {
       return {
@@ -65,16 +63,11 @@ export default function EMICalculator() {
     const principal = loanAmount
     const ratePerMonth = interestRate / (12 * 100)
     const tenureInMonths = loanTenure
-    
-    const emi =
-      (principal *
-        ratePerMonth *
-        Math.pow(1 + ratePerMonth, tenureInMonths)) /
-      (Math.pow(1 + ratePerMonth, tenureInMonths) - 1)
-    
+
+    const emi = (principal * ratePerMonth * Math.pow(1 + ratePerMonth, tenureInMonths)) / (Math.pow(1 + ratePerMonth, tenureInMonths) - 1)
     const totalAmount = emi * tenureInMonths
     const totalInterest = totalAmount - principal
-    
+
     return {
       emi: Math.round(emi),
       totalAmount: Math.round(totalAmount),
@@ -86,96 +79,107 @@ export default function EMICalculator() {
   const { emi, totalAmount, totalInterest, error } = calculateEMI()
 
   return (
-    <div className="rounded-lg bg-white p-6 shadow-sm ring-1 ring-gray-900/5">
-      <h3 className="text-base font-semibold leading-7 text-gray-900">EMI Calculator</h3>
-      {error && (
-        <div className="mt-2 rounded-md bg-red-50 p-3">
-          <p className="text-sm text-red-600">{error}</p>
-        </div>
-      )}
-      <div className="mt-6 space-y-6">
-        <div>
+    <div className="space-y-8">
+      {/* Inputs Section */}
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Loan Amount Input */}
+        <div className="space-y-2">
           <label className="block text-sm font-medium leading-6 text-gray-900">
-            Loan Amount: ₹
-            <input
-            type="number"
-            value={loanAmount}
-            onChange={(e) => setLoanAmount(Number(e.target.value))}
-            className="mt-2 ml-2 inline w-auto rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-          />
-                        
+            Loan Amount: ₹{loanAmount.toLocaleString()}
           </label>
-          
           <input
             type="range"
             min="10000"
             max="1000000"
-            step="5000"
+            step="10000"
             value={loanAmount}
             onChange={(e) => setLoanAmount(Number(e.target.value))}
-            className="mt-2 w-full"
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
           />
+          <div className="flex justify-between text-xs text-gray-500">
+            <span>₹10,000</span>
+            <span>₹10 Lakh</span>
+          </div>
         </div>
 
-        <div>
+        {/* Interest Rate Input */}
+        <div className="space-y-2">
           <label className="block text-sm font-medium leading-6 text-gray-900">
-            Interest Rate: 
-            % <input
-            type="number"
-            value={interestRate}
-            onChange={(e) => setInterestRate(Number(e.target.value))}
-            className="mt-2 ml-2 inline w-auto rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-          />
+            Interest Rate: {interestRate}% p.a.
           </label>
           <input
             type="range"
             min="5"
-            max="18"
+            max="20"
             step="0.1"
             value={interestRate}
             onChange={(e) => setInterestRate(Number(e.target.value))}
-            className="mt-2 w-full"
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
           />
+          <div className="flex justify-between text-xs text-gray-500">
+            <span>5%</span>
+            <span>20%</span>
+          </div>
         </div>
 
-        <div>
+        {/* Loan Tenure Input */}
+        <div className="space-y-2">
           <label className="block text-sm font-medium leading-6 text-gray-900">
             Loan Tenure: {loanTenure} months
           </label>
           <input
             type="range"
             min="1"
-            max="60"
+            max="240"
             step="1"
             value={loanTenure}
             onChange={(e) => setLoanTenure(Number(e.target.value))}
-            className="mt-2 w-full"
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
           />
-        </div>
-
-        <div className="rounded-lg bg-gray-50 p-4">
-          <dl className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-            <div>
-              <dt className="text-sm font-medium leading-6 text-gray-500">Monthly EMI</dt>
-              <dd className="mt-1 text-lg font-semibold tracking-tight text-gray-900">
-                ₹{emi.toLocaleString()}
-              </dd>
-            </div>
-            <div>
-              <dt className="text-sm font-medium leading-6 text-gray-500">Total Interest</dt>
-              <dd className="mt-1 text-lg font-semibold tracking-tight text-gray-900">
-                ₹{totalInterest.toLocaleString()}
-              </dd>
-            </div>
-            <div>
-              <dt className="text-sm font-medium leading-6 text-gray-500">Total Amount</dt>
-              <dd className="mt-1 text-lg font-semibold tracking-tight text-gray-900">
-                ₹{totalAmount.toLocaleString()}
-              </dd>
-            </div>
-          </dl>
+          <div className="flex justify-between text-xs text-gray-500">
+            <span>1 month</span>
+            <span>20 years</span>
+          </div>
         </div>
       </div>
+
+      {/* Results Section */}
+      {error ? (
+        <div className="rounded-lg bg-red-50 p-4">
+          <div className="flex">
+            <div className="ml-3">
+              <h3 className="text-sm font-medium text-red-800">Error</h3>
+              <div className="mt-2 text-sm text-red-700">
+                <p>{error}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 p-6 shadow-md">
+            <div className="absolute right-0 top-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-white/10 blur-2xl"></div>
+            <div className="relative">
+              <p className="text-sm font-medium text-blue-200">Monthly EMI</p>
+              <p className="mt-2 text-3xl font-bold text-white">₹{emi.toLocaleString()}</p>
+            </div>
+          </div>
+          <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-md ring-1 ring-gray-200/70">
+            <div className="absolute right-0 top-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-blue-50 blur-2xl"></div>
+            <div className="relative">
+              <p className="text-sm font-medium text-gray-600">Total Interest</p>
+              <p className="mt-2 text-2xl font-bold text-gray-900">₹{totalInterest.toLocaleString()}</p>
+            </div>
+          </div>
+          <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-md ring-1 ring-gray-200/70">
+            <div className="absolute right-0 top-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-blue-50 blur-2xl"></div>
+            <div className="relative">
+              <p className="text-sm font-medium text-gray-600">Total Amount</p>
+              <p className="mt-2 text-2xl font-bold text-gray-900">₹{totalAmount.toLocaleString()}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

@@ -17,34 +17,45 @@ interface LoanCardProps {
 
 export default function LoanCard({ loan }: LoanCardProps) {
   return (
-    <div className="relative flex flex-col overflow-hidden rounded-lg border border-gray-200 p-6 hover:border-gray-300">
-      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50">
-        <loan.icon className="h-6 w-6 text-blue-600" aria-hidden="true" />
-      </div>
-      <h3 className="mt-4 text-lg font-semibold leading-8 tracking-tight text-gray-900">
-        {loan.title}
-      </h3>
-      <p className="mt-2 text-base leading-7 text-gray-600">{loan.description}</p>
-      <div className="mt-4 flex flex-wrap gap-4 text-sm">
-        <div>
-          <span className="font-medium text-gray-900">Interest Rate:</span>{' '}
-          <span className="text-gray-600">{loan.interestRate}</span>
+    <div className="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-lg ring-1 ring-gray-200/50 transition-all duration-200 hover:shadow-xl hover:-translate-y-1">
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-blue-50 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+      <div className="relative flex h-full flex-col p-8">
+        {/* Icon */}
+        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-blue-600 ring-1 ring-blue-600/10 shadow-md">
+          <loan.icon className="h-7 w-7 text-white" aria-hidden="true" />
         </div>
-        <div>
-          <span className="font-medium text-gray-900">Max Amount:</span>{' '}
-          <span className="text-gray-600">{loan.maxAmount}</span>
+
+        {/* Title and Description */}
+        <h3 className="mt-6 text-xl font-semibold leading-8 tracking-tight text-gray-900 group-hover:text-blue-600 transition-colors">
+          {loan.title}
+        </h3>
+        <p className="mt-2 text-base leading-7 text-gray-600">{loan.description}</p>
+
+        {/* Stats Grid */}
+        <div className="mt-8 grid grid-cols-2 gap-4 text-sm">
+          <div className="relative overflow-hidden rounded-xl bg-gray-50/80 p-4">
+            <div className="font-medium text-gray-900">Interest Rate</div>
+            <div className="mt-1 text-blue-600 font-semibold text-lg">{loan.interestRate}</div>
+          </div>
+          <div className="relative overflow-hidden rounded-xl bg-gray-50/80 p-4">
+            <div className="font-medium text-gray-900">Max Amount</div>
+            <div className="mt-1 text-blue-600 font-semibold text-lg">{loan.maxAmount}</div>
+          </div>
         </div>
-        <div>
-          <span className="font-medium text-gray-900">Tenure:</span>{' '}
-          <span className="text-gray-600">{loan.tenure}</span>
+
+        {/* Tenure */}
+        <div className="mt-4 rounded-xl bg-gray-50/80 p-4">
+          <div className="font-medium text-gray-900">Tenure</div>
+          <div className="mt-1 text-gray-600">{loan.tenure}</div>
         </div>
-      </div>
-      <div className="mt-6">
+
+        {/* Link */}
         <Link
           href={`/loans/${loan.id}`}
-          className="inline-flex items-center gap-2 text-sm font-semibold leading-6 text-blue-600 hover:text-blue-500"
+          className="group/link mt-8 flex items-center gap-2 text-sm font-semibold leading-6 text-blue-600 transition-colors hover:text-blue-500"
         >
-          Learn more <ArrowRightIcon className="h-4 w-4" />
+          Learn more
+          <ArrowRightIcon className="h-4 w-4 transition-transform group-hover/link:translate-x-1" />
         </Link>
       </div>
     </div>
