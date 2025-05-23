@@ -94,7 +94,7 @@ export default function EMICalculator() {
             step="10000"
             value={loanAmount}
             onChange={(e) => setLoanAmount(Number(e.target.value))}
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+            className="w-full py-2 h-2 bg-gray-200 rounded-lg cursor-pointer"
           />
           <div className="flex justify-between text-xs text-gray-500">
             <span>₹10,000</span>
@@ -114,7 +114,7 @@ export default function EMICalculator() {
             step="0.1"
             value={interestRate}
             onChange={(e) => setInterestRate(Number(e.target.value))}
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+            className="w-full py-2 h-2 bg-gray-200 rounded-lg cursor-pointer"
           />
           <div className="flex justify-between text-xs text-gray-500">
             <span>5%</span>
@@ -134,7 +134,7 @@ export default function EMICalculator() {
             step="1"
             value={loanTenure}
             onChange={(e) => setLoanTenure(Number(e.target.value))}
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+            className="w-full py-2 h-2 bg-gray-200 rounded-lg cursor-pointer"
           />
           <div className="flex justify-between text-xs text-gray-500">
             <span>1 month</span>
