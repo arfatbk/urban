@@ -6,7 +6,7 @@ const deposits: DepositType[] = [
     title: 'Fixed Deposit',
     description:
       'Earn guaranteed returns with our fixed deposit schemes. Choose from flexible tenures and competitive interest rates.',
-    interestRate: 'Up to 7.50% p.a.',
+    interestRate: 'Up to 8.50% p.a.',
     minAmount: '₹10,000',
     duration: '6 months to 10 years',
     features: [
@@ -22,9 +22,9 @@ const deposits: DepositType[] = [
     title: 'Recurring Deposit',
     description:
       'Build your savings with regular monthly deposits. Perfect for achieving your financial goals.',
-    interestRate: 'Up to 7.00% p.a.',
+    interestRate: 'Up to 9.00% p.a.',
     minAmount: '₹500/month',
-    duration: '6 months to 10 years',
+    duration: '12 months to 10 years',
     features: [
       'Flexible monthly deposit amounts',
       'Standing instruction facility',
@@ -34,19 +34,19 @@ const deposits: DepositType[] = [
     ],
   },
   {
-    id: 'tax-saver-fd',
-    title: 'Tax Saver Fixed Deposit',
+    id: 'monthly-income-scheme',
+    title: 'Monthly Income Scheme (MIS)',
     description:
-      'Save tax while earning higher returns. Get tax benefits under Section 80C of Income Tax Act.',
-    interestRate: 'Up to 7.25% p.a.',
+      'Enjoy a steady monthly income with our MIS. Invest a lump sum and receive regular interest payouts, making it ideal for retirees and those seeking predictable returns.',
+    interestRate: 'Up to 8.5% p.a.',
     minAmount: '₹1,00,000',
-    duration: '5 years (lock-in)',
+    duration: 'from 1 year (lock-in)',
     features: [
-      'Tax deduction under Section 80C',
-      'Higher interest rates',
-      'Safe and secure investment',
-      'Available for individuals and HUFs',
-      'No premature withdrawal',
+      'Guaranteed monthly interest payouts',
+      'Ideal for retirees and fixed income seekers',
+      'No market risk, principal is safe',
+      'Flexible investment amount options',
+      'Easy nomination and transfer facility',
     ],
   },
   {
@@ -54,15 +54,31 @@ const deposits: DepositType[] = [
     title: 'Senior Citizen Fixed Deposit',
     description:
       'Special fixed deposit scheme for senior citizens with higher interest rates and additional benefits.',
-    interestRate: 'Up to 8.00% p.a.',
-    minAmount: '₹10,000',
-    duration: '6 months to 10 years',
+    interestRate: 'Up to 9.00% p.a.',
+    minAmount: '₹1,00,000',
+    duration: '1 year to 10 years',
     features: [
       'Additional 0.50% interest rate',
       'Monthly interest payout option',
       'Nomination facility',
       'Auto-renewal facility',
       'Doorstep banking services',
+    ],
+  },
+  {
+    id: 'daily-deposit',
+    title: 'Daily Deposit (Pigmy)',
+    description:
+      'Grow your savings with small daily deposits collected at your doorstep. Ideal for individuals and small businesses looking for disciplined savings and easy liquidity.',
+    interestRate: 'Up to 8.00% p.a.',
+    minAmount: '₹100/day',
+    duration: 'Flexible tenure',
+    features: [
+      'Daily doorstep collection',
+      'Flexible deposit amounts',
+      'Easy withdrawal facility',
+      'No penalty for missed days',
+      'Suitable for traders and small businesses',
     ],
   },
 ]
@@ -101,9 +117,7 @@ export default function DepositsPage() {
               >
                 Contact Us
               </a>
-              <a href="/branches" className="text-sm font-semibold leading-6 text-blue-900">
-                Find a Branch <span aria-hidden="true">→</span>
-              </a>
+             
             </div>
           </div>
         </div>

@@ -62,14 +62,7 @@ export default function DepositCard({ deposit }: DepositCardProps) {
             ))}
           </ul>
         </div>
-        <div className="mt-6 flex flex-1 items-end">
-          <Link
-            href={`/deposits/${deposit.id}`}
-            className="inline-flex items-center gap-2 text-sm font-semibold leading-6 text-blue-600 hover:text-blue-500"
-          >
-            Learn more <ArrowRightIcon className="h-4 w-4" />
-          </Link>
-        </div>
+        
       </div>
     </div>
   )

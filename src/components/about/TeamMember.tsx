@@ -12,11 +12,13 @@ export default function TeamMember({ name, role, image, bio, linkedIn }: TeamMem
   return (
     <div className="group relative">
       <div className="aspect-h-3 aspect-w-3 overflow-hidden rounded-lg">
-        <Image
+        {/* <Image
+          width={300}
+          height={300}
           src={image}
           alt={name}
           className="object-cover group-hover:opacity-90 transition-opacity"
-        />
+        /> */}
       </div>
       <h3 className="mt-4 text-lg font-semibold leading-8 text-gray-900">{name}</h3>
       <p className="text-base leading-7 text-blue-600">{role}</p>
