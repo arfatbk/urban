@@ -9,7 +9,7 @@ export default function EMICalculator() {
 
   const calculateEMI = () => {
     // Validate loan amount
-    if (loanAmount <= 0) {
+    if (loanAmount < 10000) {
       return {
         emi: 0,
         totalAmount: 0,
@@ -27,12 +27,12 @@ export default function EMICalculator() {
     }
 
     // Validate interest rate
-    if (interestRate <= 0) {
+    if (interestRate <= 4) {
       return {
         emi: 0,
         totalAmount: 0,
         totalInterest: 0,
-        error: 'Interest rate must be greater than 0'
+        error: 'Interest rate must be between 5%-20%'
       }
     }
     if (interestRate > 20) {
