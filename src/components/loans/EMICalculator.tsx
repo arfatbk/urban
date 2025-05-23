@@ -3,14 +3,14 @@
 import { useState } from 'react'
 
 export default function EMICalculator() {
-  const [loanAmount, setLoanAmount] = useState(1000000)
-  const [interestRate, setInterestRate] = useState(8.5)
-  const [loanTenure, setLoanTenure] = useState(20)
+  const [loanAmount, setLoanAmount] = useState(500000)
+  const [interestRate, setInterestRate] = useState(10)
+  const [loanTenure, setLoanTenure] = useState(12)
 
   const calculateEMI = () => {
     const principal = loanAmount
     const ratePerMonth = interestRate / (12 * 100)
-    const tenureInMonths = loanTenure * 12
+    const tenureInMonths = loanTenure 
     
     const emi =
       (principal *
@@ -28,6 +28,15 @@ export default function EMICalculator() {
     }
   }
 
+  const setInterestRateNumber = (value: string) => {
+    const parsedValue = parseFloat(value);
+    if (!isNaN(parsedValue)) {
+      setInterestRate(parsedValue)
+    } else {
+      setInterestRate(1)
+    }
+  }
+
   const { emi, totalAmount, totalInterest } = calculateEMI()
 
   return (
@@ -36,13 +45,21 @@ export default function EMICalculator() {
       <div className="mt-6 space-y-6">
         <div>
           <label className="block text-sm font-medium leading-6 text-gray-900">
-            Loan Amount: ₹{loanAmount.toLocaleString()}
+            Loan Amount: ₹
+            <input
+            type="number"
+            value={loanAmount}
+            onChange={(e) => setLoanAmount(Number(e.target.value))}
+            className="mt-2 ml-2 inline w-auto rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+          />
+                        
           </label>
+          
           <input
             type="range"
-            min="100000"
-            max="10000000"
-            step="100000"
+            min="10000"
+            max="1000000"
+            step="5000"
             value={loanAmount}
             onChange={(e) => setLoanAmount(Number(e.target.value))}
             className="mt-2 w-full"
@@ -51,12 +68,18 @@ export default function EMICalculator() {
 
         <div>
           <label className="block text-sm font-medium leading-6 text-gray-900">
-            Interest Rate: {interestRate}%
+            Interest Rate: 
+            % <input
+            type="number"
+            value={interestRate}
+            onChange={(e) => setInterestRateNumber(e.target.value)}
+            className="mt-2 ml-2 inline w-auto rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+          />
           </label>
           <input
             type="range"
             min="5"
-            max="15"
+            max="18"
             step="0.1"
             value={interestRate}
             onChange={(e) => setInterestRate(Number(e.target.value))}
@@ -66,12 +89,13 @@ export default function EMICalculator() {
 
         <div>
           <label className="block text-sm font-medium leading-6 text-gray-900">
-            Loan Tenure: {loanTenure} years
+            Loan Tenure: {loanTenure} months
           </label>
           <input
             type="range"
             min="1"
-            max="30"
+            max="60"
+            step="1"
             value={loanTenure}
             onChange={(e) => setLoanTenure(Number(e.target.value))}
             className="mt-2 w-full"

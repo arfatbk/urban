@@ -12,7 +12,7 @@ const loans = [
     description:
       "Quick personal loans for your immediate needs with minimal documentation.",
     interestRate: "10.75% p.a.",
-    maxAmount: "₹10 Lakhs",
+    maxAmount: "₹5 Lakhs",
     tenure: "Up to 5 years",
     icon: BanknotesIcon,
   },
@@ -22,8 +22,8 @@ const loans = [
     description:
       "Make your dream home a reality with our affordable home loans.",
     interestRate: "8.50% p.a.",
-    maxAmount: "₹1 Crore",
-    tenure: "Up to 30 years",
+    maxAmount: "₹20 Lakhs",
+    tenure: "Up to 20 years",
     icon: HomeIcon,
   },
 
