@@ -31,15 +31,22 @@ export default function QuickLinks() {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
+
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-blue-600">Banking Made Simple</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Everything you need to manage your finances
-          </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Discover our range of banking products and services designed to meet your financial goals.
-          </p>
-        </div>
+					<div className="flex justify-center">
+						<div className="rounded-full bg-blue-600/10 px-3 py-1 text-sm font-semibold leading-6 text-blue-600 ring-1 ring-inset ring-blue-600/10 animate-fade-in">
+							Banking Made Simple
+						</div>
+					</div>
+					<p className="mt-6 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl animate-title">
+						Everything you need to manage your finances
+					</p>
+					<p className="mt-6 text-lg leading-8 text-gray-600 animate-fade-in-delayed">
+						Discover our range of banking products and services designed to meet your financial goals.
+					</p>
+				</div>
+
+
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
             {features.map((feature) => (
