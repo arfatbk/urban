@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://swarajyurban.in
+
+# Sitemaps
+Sitemap: https://swarajyurban.in/sitemap.xml
