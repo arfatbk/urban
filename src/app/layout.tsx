@@ -16,10 +16,57 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: `${siteConfig.name.full} - Empowering Dreams, Building Futures`,
   description: `${siteConfig.name.full} - ${siteConfig.description}`,
+  metadataBase: new URL(siteConfig.url),
+  keywords: ["cooperative society", "credit society", "urban bank", "loans", "deposits", "financial services", "banking", "Maharashtra"],
+  authors: [{ name: siteConfig.name.full }],
+  creator: siteConfig.name.full,
+  publisher: siteConfig.name.legal,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  verification: {
+    google: "your-google-site-verification", // Add your Google verification code
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: siteConfig.url,
+    siteName: siteConfig.name.full,
+    title: `${siteConfig.name.full} - Empowering Dreams, Building Futures`,
+    description: `${siteConfig.name.full} - ${siteConfig.description}`,
+    images: [
+      {
+        url: "/og-social.jpg",
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name.full,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name.full,
+    description: siteConfig.description,
+    images: "/og-social.jpg",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
+import JsonLd from "@/components/layout/JsonLd";
 
 export default function RootLayout({
   children,
@@ -31,6 +78,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
+        <JsonLd />
         <Navigation />
         <main className="flex-grow">{children}</main>
         <Footer />
