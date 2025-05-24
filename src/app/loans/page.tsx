@@ -1,11 +1,35 @@
 import {
   HomeIcon,
   BanknotesIcon,
+  CurrencyRupeeIcon,
+  BriefcaseIcon,
+  ShieldCheckIcon,
+  LockClosedIcon,
 } from "@heroicons/react/24/outline";
 import LoanCard from "@/components/loans/LoanCard";
 import EMICalculator from "@/components/loans/EMICalculator";
 
 const loans = [
+  {
+    id: "gold",
+    title: "Gold Loan",
+    description:
+      "Unlock the value of your gold assets with instant loans at attractive interest rates. Enjoy quick processing, minimal paperwork, and flexible repayment options.",
+    interestRate: "14% p.a.",
+    maxAmount: "₹10 Lakhs",
+    tenure: "Up to 1 years",
+    icon: CurrencyRupeeIcon,
+  },
+  {
+    id: "business",
+    title: "Business Loan",
+    description:
+      "Fuel your business growth with our flexible business loans. Benefit from competitive interest rates, fast approvals, and tailored repayment plans to support your entrepreneurial ambitions.",
+    interestRate: "14% p.a.",
+    maxAmount: "₹10 Lakhs",
+    tenure: "Up to 5 years",
+    icon: BriefcaseIcon,
+  },
   {
     id: "personal",
     title: "Personal Loan",
@@ -26,7 +50,26 @@ const loans = [
     tenure: "Up to 20 years",
     icon: HomeIcon,
   },
-
+  {
+    id: "loan_against_fd",
+    title: "Loan Against Fixed Deposit",
+    description:
+      "Get instant liquidity against your fixed deposits with low interest rates and flexible repayment options. Ideal for emergencies or planned expenses.",
+    interestRate: "9% p.a.",
+    maxAmount: "₹20 Lakhs",
+    tenure: "Depending upon FD tenure",
+    icon: ShieldCheckIcon,
+  },
+  {
+    id: "loan_against_property",
+    title: "Loan Against Property",
+    description:
+      "Leverage your property to secure funds for business expansion, education, or personal needs. Enjoy low interest rates and flexible repayment terms.",
+    interestRate: "10.50% p.a.",
+    maxAmount: "₹20 Lakhs",
+    tenure: "Up to 5 years",
+    icon: LockClosedIcon,
+  },
 ];
 
 export default function Loans() {
