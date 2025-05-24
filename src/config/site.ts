@@ -6,7 +6,7 @@ export const siteConfig = {
     legal: "Swarajya Urban Co-operative Credit Society Ltd.",
   },
   description: "Your trusted partner in financial growth",
-  url: "https://arfatbk.github.io/urban/",
+  url: "https://swarajyurban.in",
   socials: {
     facebook:
       "https://www.facebook.com/people/Swarajy-Urban-Co-Op-Credit-Society-Limited-Pathri/61575036741457/",
