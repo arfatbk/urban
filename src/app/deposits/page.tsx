@@ -70,14 +70,14 @@ const deposits: DepositType[] = [
     title: "Daily Deposit (Pigmy)",
     description:
       "Grow your savings with small daily deposits collected at your doorstep. Ideal for individuals and small businesses looking for disciplined savings and easy liquidity.",
-    interestRate: "Up to 8.00% p.a.",
+    interestRate: "0.00% p.a.",
     minAmount: "₹100/day",
     duration: "Flexible tenure",
     features: [
       "Daily doorstep collection",
       "Flexible deposit amounts",
       "Easy withdrawal facility",
-      "No penalty for missed days",
+      "Doorstep withdrawal option",
       "Suitable for traders and small businesses",
     ],
   },

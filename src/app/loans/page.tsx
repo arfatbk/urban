@@ -98,8 +98,8 @@ export default function Loans() {
                 <dd className="mt-2 text-3xl font-bold tracking-tight text-white">24 hrs</dd>
               </div>
               <div className="relative rounded-2xl bg-white/5 px-4 py-6 ring-1 ring-white/10">
-                <dt className="text-sm font-semibold text-gray-300">Interest Rate From</dt>
-                <dd className="mt-2 text-3xl font-bold tracking-tight text-white">8.50% p.a.</dd>
+                <dt className="text-sm font-semibold text-gray-300">Choose from</dt>
+                <dd className="mt-2 text-3xl font-bold tracking-tight text-white">6+ products</dd>
               </div>
             </div>
           </div>
