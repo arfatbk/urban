@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { siteConfig } from "@/config/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Urban Bank - Empowering Dreams, Building Futures",
-  description: "Urban Bank - A trusted financial institution offering loans, deposits, and banking services to help build your future.",
+  title: `${siteConfig.name.full} - Empowering Dreams, Building Futures`,
+  description: `${siteConfig.name.full} - ${siteConfig.description}`,
 };
 
 import Navigation from "@/components/layout/Navigation";

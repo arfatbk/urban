@@ -1,10 +1,12 @@
 import ContactForm from '@/components/shared/ContactForm'
 import { MapPinIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
+import { siteConfig } from "@/config/site";
 
+const name = siteConfig.name.short;
 const contactMethods = [
 	{
 		name: 'Head Office',
-		description: 'Urban Bank Main Office',
+		description: name+' Main Office',
 		icon: MapPinIcon,
 		details: 'Shop 97, Panchayat Samiti complex, 1st floor, Pathri, Dist.- Parbhani, Maharashtra - 431506',
 		type: 'address',

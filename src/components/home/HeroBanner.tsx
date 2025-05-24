@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { siteConfig } from '@/config/site'
 
 export default function HeroBanner() {
   return (
@@ -14,7 +15,7 @@ export default function HeroBanner() {
           <div className="mt-24 sm:mt-32 lg:mt-16">
             <a href="/about" className="inline-flex space-x-6">
               <span className="rounded-full bg-blue-500/10 px-3 py-1 text-sm font-semibold leading-6 text-blue-200 ring-1 ring-inset ring-blue-500/20">
-                Urban Bank
+                {siteConfig.name.full}
               </span>
               <span className="inline-flex items-center space-x-2 text-sm font-medium text-blue-200">
                 <span>Explore Our Story</span>

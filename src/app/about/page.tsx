@@ -1,5 +1,6 @@
 import MissionVision from '@/components/about/MissionVision'
 import TeamMember from '@/components/about/TeamMember'
+import { siteConfig } from "@/config/site";
 
 const teamMembers = [
   {
@@ -37,7 +38,7 @@ export default function AboutPage() {
               About Us
             </h1>
             <p className="mt-6 text-lg leading-8 text-blue-100 max-w-xl">
-              Urban Bank has been serving our community with trust, integrity,
+              {siteConfig.name.full} has been serving our community with trust, integrity,
               and innovation. We are committed to providing accessible financial solutions while
               maintaining the highest standards of service.
             </p>

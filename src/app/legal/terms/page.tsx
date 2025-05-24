@@ -1,3 +1,5 @@
+import { siteConfig } from "@/config/site";
+
 export default function TermsPage() {
   return (
     <div className="bg-white px-6 py-32 lg:px-8">
@@ -6,13 +8,13 @@ export default function TermsPage() {
         <div className="mt-10 space-y-6">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">1. Introduction</h2>
           <p>
-            Welcome to Urban Bank. By accessing and using our services, you agree to be bound by these
+            Welcome to {siteConfig.name.legal}. By accessing and using our services, you agree to be bound by these
             Terms and Conditions. Please read them carefully.
           </p>
 
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">2. Services</h2>
           <p>
-            Urban Bank provides banking and financial services including but not limited to savings accounts,
+            {siteConfig.name.legal} provides banking and financial services including but not limited to savings accounts,
             loans, and fixed deposits. All services are subject to applicable banking regulations and laws.
           </p>
 
@@ -24,7 +26,7 @@ export default function TermsPage() {
 
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">4. Liability</h2>
           <p>
-            Urban Bank shall not be liable for any losses incurred due to circumstances beyond our reasonable
+            {siteConfig.name.legal} shall not be liable for any losses incurred due to circumstances beyond our reasonable
             control, including system failures or third-party actions.
           </p>
 

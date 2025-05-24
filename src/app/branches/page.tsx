@@ -1,6 +1,7 @@
 'use client';
 
 import BranchCard, { Branch } from '@/components/branches/BranchCard'
+import { siteConfig } from "@/config/site";
 
 // Sample branch data - in a real app, this would come from an API
 const branches: Branch[] = [
@@ -44,7 +45,7 @@ export default function BranchesPage() {
 							Our Branches
 						</h1>
 						<p className="mt-6 text-lg leading-8 text-gray-600">
-							Find your nearest Urban Bank branch. Our network of branches is here to serve
+							Find your nearest {siteConfig.name.full} branch. Our network of branches is here to serve
 							you with all your banking needs.
 						</p>
 					</div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { Disclosure } from '@headlessui/react'
+import { siteConfig } from '@/config/site'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -25,7 +26,7 @@ export default function Navigation() {
             <div className="flex h-16 justify-between">
               <div className="flex">
                 <Link href="/" className="flex flex-shrink-0 items-center">
-                  <span className="text-xl font-bold text-blue-600">Urban</span>
+                  <span className="text-xl font-bold text-blue-600">{siteConfig.name.short}</span>
                 </Link>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   {navigation.map((item) => (

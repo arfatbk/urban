@@ -1,3 +1,5 @@
+import { siteConfig } from "@/config/site";
+
 export default function RegulatoryPage() {
   return (
     <div className="bg-white px-6 py-32 lg:px-8">
@@ -6,13 +8,13 @@ export default function RegulatoryPage() {
         <div className="mt-10 space-y-6">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">1. Banking License</h2>
           <p>
-            Urban Bank is licensed and regulated by the Reserve Bank of India (RBI) as a banking
+            {siteConfig.name.legal} is licensed and regulated by the Reserve Bank of India (RBI) as a banking
             institution. Our banking license number is [License Number].
           </p>
 
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">2. Deposit Insurance</h2>
           <p>
-            Deposits with Urban Bank are insured by the Deposit Insurance and Credit Guarantee
+            Deposits with {siteConfig.name.legal} are insured by the Deposit Insurance and Credit Guarantee
             Corporation (DICGC) up to ₹5 lakhs per depositor.
           </p>
 

@@ -1,9 +1,12 @@
+import { siteConfig } from "@/config/site";
+
+const name = siteConfig.name.short;
 const timeline = [
   {
     year: '1995',
     title: 'Foundation',
     description:
-      'Urban Bank was established with a vision to serve the local community.',
+      name+' was established with a vision to serve the local community.',
   },
   {
     year: '2000',

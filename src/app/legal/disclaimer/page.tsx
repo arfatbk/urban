@@ -1,3 +1,5 @@
+import { siteConfig } from "@/config/site";
+
 export default function DisclaimerPage() {
   return (
     <div className="bg-white px-6 py-32 lg:px-8">
@@ -25,7 +27,7 @@ export default function DisclaimerPage() {
 
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">4. Limitation of Liability</h2>
           <p>
-            Urban Bank shall not be liable for any losses, injuries, or damages resulting from the
+            {siteConfig.name.legal} shall not be liable for any losses, injuries, or damages resulting from the
             display or use of information from this website.
           </p>
 
