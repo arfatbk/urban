@@ -28,7 +28,7 @@ export default function Navigation() {
               <div className="flex">
                 <Link href="/" className="flex flex-shrink-0 items-center gap-x-2 group">
                   <Image
-                  src="/logo.png" 
+                  src={`${siteConfig.basePath}/logo.png`} 
                   alt={siteConfig.name.short}
                   width={32}
                   height={32}
@@ -36,7 +36,7 @@ export default function Navigation() {
                   priority
                   />
                   <Image 
-                  src="/logo-name.png" 
+                  src={`${siteConfig.basePath}/logo-name.png`} 
                   alt={`${siteConfig.name.short} Logo`}
                   width={100}
                   height={24}
