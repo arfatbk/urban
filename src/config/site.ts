@@ -1,6 +1,5 @@
 export const siteConfig = {
-
-  basePath: process.env.ENVIRONMENT === 'local' ? "" : "/urban",
+  basePath: process.env.ENVIRONMENT === 'local' ? "" : "/",
   name: {
     short: "Swarajya Urban",
     full: "Swarajya Urban Society",
