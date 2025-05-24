@@ -15,17 +15,17 @@ const contactMethods = [
 		name: 'Phone',
 		description: 'Mon-Fri from 8am to 5pm',
 		icon: PhoneIcon,
-		details: '+91 91 5842 1818',
+		details: siteConfig.contact,
 		type: 'phone',
-		href: 'tel:+919158421818',
+		href: `tel:${siteConfig.contact}`,
 	},
 	{
 		name: 'Email',
 		description: 'Our support team is here to help',
 		icon: EnvelopeIcon,
-		details: 'swarajyurban@gmail.com',
+		details: siteConfig.email,
 		type: 'email',
-		href: 'mailto:swarajyurban@gmail.com',
+		href: `mailto:${siteConfig.email}`,
 	},
 ]
 

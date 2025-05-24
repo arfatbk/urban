@@ -1,7 +1,6 @@
 import MissionVision from '@/components/about/MissionVision'
 import TeamMember from '@/components/about/TeamMember'
 import { siteConfig } from "@/config/site";
-import Image from 'next/image';
 
 const teamMembers = [
   {
