@@ -5,6 +5,7 @@ import { siteConfig } from '@/config/site'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -25,8 +26,23 @@ export default function Navigation() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 justify-between">
               <div className="flex">
-                <Link href="/" className="flex flex-shrink-0 items-center">
-                  <span className="text-xl font-bold text-blue-600">{siteConfig.name.short}</span>
+                <Link href="/" className="flex flex-shrink-0 items-center gap-x-2 group">
+                  <Image
+                  src="/logo.png" 
+                  alt={siteConfig.name.short}
+                  width={32}
+                  height={32}
+                  className="h-8 w-8 object-contain transition-transform group-hover:scale-105"
+                  priority
+                  />
+                  <Image 
+                  src="/logo-name.png" 
+                  alt={`${siteConfig.name.short} Logo`}
+                  width={100}
+                  height={24}
+                  className="h-6 object-contain transition-transform group-hover:scale-105" 
+                  priority
+                  />
                 </Link>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   {navigation.map((item) => (

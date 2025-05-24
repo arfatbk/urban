@@ -1,6 +1,7 @@
 import MissionVision from '@/components/about/MissionVision'
 import TeamMember from '@/components/about/TeamMember'
 import { siteConfig } from "@/config/site";
+import Image from 'next/image';
 
 const teamMembers = [
   {
@@ -29,10 +30,13 @@ export default function AboutPage() {
           <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#1d4ed8] to-[#93c5fd] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"></div>
         </div>
         
-        <div className="relative mx-auto max-w-7xl px-24 py-8 sm:py-32 lg:px-8 lg:py-18">
+        <div className="relative mx-auto max-w-7xl px-6 sm:px-8 py-8 sm:py-32 lg:px-8 lg:py-18">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <div className="mb-8">
-              
+            <div className="mb-8 flex flex-col items-start">
+            
+              <div className="inline-flex rounded-full bg-blue-500/10 px-3 py-1 text-sm font-semibold leading-6 text-blue-200 ring-1 ring-inset ring-blue-500/20">
+                Our Story
+              </div>
             </div>
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
               About Us
@@ -42,7 +46,6 @@ export default function AboutPage() {
               and innovation. We are committed to providing accessible financial solutions while
               maintaining the highest standards of service.
             </p>
-            
           </div>
         </div>
         
