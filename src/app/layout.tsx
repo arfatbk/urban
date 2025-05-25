@@ -21,6 +21,16 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.name.full }],
   creator: siteConfig.name.full,
   publisher: siteConfig.name.legal,
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/favicon.ico', sizes: '16x16' },
+    ],
+    apple: [
+      { url: '/favicon.ico', sizes: '180x180' }
+    ],
+    shortcut: ['/favicon.ico']
+  },
   formatDetection: {
     email: false,
     address: false,
