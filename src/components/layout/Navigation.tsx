@@ -30,17 +30,17 @@ export default function Navigation() {
                   <Image
                   src="/logo.png"
                   alt={siteConfig.name.short}
-                  width={32}
-                  height={32}
-                  className="h-8 w-8 object-contain transition-transform group-hover:scale-105"
+                  width={56}
+                  height={56}
+                  className="h-16 w-16 object-contain transition-transform group-hover:scale-105"
                   priority
                   />
                   <Image 
                   src="/logo-name.png"
                   alt={`${siteConfig.name.short} Logo`}
                   width={100}
-                  height={24}
-                  className="h-6 object-contain transition-transform group-hover:scale-105" 
+                  height={56}
+                  className="h-16 object-contain transition-transform group-hover:scale-105" 
                   priority
                   />
                 </Link>
@@ -49,7 +49,7 @@ export default function Navigation() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium ${
+                      className={`inline-flex items-center font-bold border-b-2 px-1 pt-1 text-sm  ${
                         pathname === item.href
                           ? 'border-blue-500 text-gray-900'
                           : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
@@ -80,7 +80,7 @@ export default function Navigation() {
                   key={item.name}
                   as={Link}
                   href={item.href}
-                  className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${
+                  className={`block border-l-4 py-2 pl-3 pr-4 text-base font-bold ${
                     pathname === item.href
                       ? 'border-blue-500 bg-blue-50 text-blue-700'
                       : 'border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700'

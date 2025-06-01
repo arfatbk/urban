@@ -14,5 +14,5 @@ export const siteConfig = {
       "https://www.facebook.com/people/Swarajy-Urban-Co-Op-Credit-Society-Limited-Pathri/61575036741457/",
   },
   email: "swarajyurban@gmail.com",
-  contact: "+91 91 5842 1818 ",
+  contact: "+91 91 5843 1818 ",
 } as const;
